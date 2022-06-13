@@ -6,14 +6,14 @@
         <span></span>
         <span>猫眼电影</span>
         <span>
-          <van-icon name="wap-nav" />
+          <van-icon name="wap-nav"/>
         </span>
       </div>
 
       <div class="header-logo">
         <img
-          src="https://p0.meituan.net/scarlett/448afce485c1f342895185c2be668fa411803.png@80q"
-          alt=""
+            src="https://p0.meituan.net/scarlett/448afce485c1f342895185c2be668fa411803.png@80q"
+            alt=""
         />
         <span style="flex-grow: 1"></span>
         <span class="desc">发现最新最热电影</span>
@@ -29,7 +29,7 @@
           <Tab title="经典电影"></Tab>
         </Tabs>
 
-        <div class="search-icon" />
+        <div class="search-icon"/>
       </div>
     </div>
 
@@ -40,11 +40,11 @@
         <div class="movie-chunk" v-for="i in 20" :key="i">
           <div class="movie-img">
             <img
-              src="https://p0.pipi.cn/mmdb/25bfd6be9abc7e8d3311e5bd9b6d287be0f28.png?imageMogr2/thumbnail/2500x2500%3E"
-              alt=""
+                src="https://p0.pipi.cn/mmdb/25bfd6be9abc7e8d3311e5bd9b6d287be0f28.png?imageMogr2/thumbnail/2500x2500%3E"
+                alt=""
             />
             <span class="movie-rate"
-              >观众评分 <span style="margin-left: 4px">9.6</span></span
+            >观众评分 <span style="margin-left: 4px">9.6</span></span
             >
             <span class="shadow"></span>
           </div>
@@ -56,8 +56,8 @@
     <div class="movie-list">
       <div class="movie-detail-chunk" v-for="i in 20" :key="i">
         <img
-          src="//p0.pipi.cn/mmdb/25bfd671be15bf51baf0ee3a5d06b91bf94c3.jpg?imageMogr2/thumbnail/2500x2500%3E?imageView2/1/w/128/h/180"
-          alt=""
+            src="//p0.pipi.cn/mmdb/25bfd671be15bf51baf0ee3a5d06b91bf94c3.jpg?imageMogr2/thumbnail/2500x2500%3E?imageView2/1/w/128/h/180"
+            alt=""
         />
 
         <div class="movie-detail">
@@ -65,7 +65,7 @@
           <span class="movie-rate">观众评 <span class="score">8.7</span></span>
           <span class="movie-actor line-ellipsis">主演：Mask</span>
           <span class="movie-playinfo line-ellipsis"
-            >今天207家影院放映999场</span
+          >今天207家影院放映999场</span
           >
           <span class="split-line"></span>
         </div>
@@ -73,7 +73,8 @@
         <Button round type="danger">购票</Button>
         <Button round type="primary">预售</Button>
         <Button round style="background: #faaf00; border-color: #faaf00"
-          >想看</Button
+        >想看
+        </Button
         >
       </div>
     </div>
@@ -81,7 +82,7 @@
 </template>
 
 <script setup lang="ts">
-import { Tabs, Tab, Button } from "vant";
+import {Tabs, Tab, Button} from "vant";
 </script>
 
 <style lang="less" scoped>
@@ -92,6 +93,7 @@ import { Tabs, Tab, Button } from "vant";
     background-color: #fff;
     z-index: 2;
   }
+
   .header-bar {
     display: flex;
     justify-content: space-between;
@@ -108,6 +110,7 @@ import { Tabs, Tab, Button } from "vant";
     display: flex;
     align-items: center;
     height: 60px;
+
     img {
       height: 39px;
       margin-left: 10px;
@@ -135,16 +138,19 @@ import { Tabs, Tab, Button } from "vant";
     padding-bottom: 3px;
     border-top: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
+
     .search-city {
       padding: 0 15px;
       color: #666;
     }
 
-    /deep/.van-tabs {
+    :deep(.van-tabs) {
       flex-grow: 1;
+
       .van-tabs__nav {
         background: transparent;
       }
+
       .van-tab--line {
         color: #666;
         font-weight: bold;
@@ -191,11 +197,13 @@ import { Tabs, Tab, Button } from "vant";
         display: flex;
         flex-direction: column;
         margin-right: 10px;
+
         .movie-img {
           position: relative;
           height: 115px;
           margin-bottom: 6px;
           object-fit: cover;
+
           img {
             width: 100%;
             height: 100%;
@@ -218,11 +226,9 @@ import { Tabs, Tab, Button } from "vant";
             height: 35px;
             position: absolute;
             bottom: 0;
-            background-image: linear-gradient(
-              -180deg,
-              rgba(77, 77, 77, 0),
-              #000
-            );
+            background-image: linear-gradient(-180deg,
+            rgba(77, 77, 77, 0),
+            #000);
           }
         }
 
@@ -235,6 +241,7 @@ import { Tabs, Tab, Button } from "vant";
       }
     }
   }
+
   .split {
     height: 10px;
     background: #f4f4f4;
@@ -243,10 +250,12 @@ import { Tabs, Tab, Button } from "vant";
   .movie-list {
     display: flex;
     flex-direction: column;
+
     .movie-detail-chunk {
       padding: 15px;
       display: flex;
       position: relative;
+
       img {
         width: 64px;
         object-fit: cover;
@@ -258,6 +267,7 @@ import { Tabs, Tab, Button } from "vant";
         flex-direction: column;
         flex-grow: 1;
         position: relative;
+
         .split-line {
           background: rgba(153, 153, 153, 0.2);
           height: 1px;
@@ -268,6 +278,7 @@ import { Tabs, Tab, Button } from "vant";
           right: 0;
           transform: scale(0.5) translateX(50%);
         }
+
         .movie-title {
           font-size: 17px;
           color: #333;
@@ -282,6 +293,7 @@ import { Tabs, Tab, Button } from "vant";
           font-size: 13px;
           color: #666;
           margin-top: 6px;
+
           .score {
             font-weight: bold;
             color: #faaf00;
@@ -290,7 +302,7 @@ import { Tabs, Tab, Button } from "vant";
         }
       }
 
-      /deep/.van-button {
+      :deep(.van-button) {
         padding: 0;
         width: 54px;
         height: 28px;
