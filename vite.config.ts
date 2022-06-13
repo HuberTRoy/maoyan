@@ -5,7 +5,6 @@ import styleImport, { VantResolve } from "vite-plugin-style-import";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: { https: true },
   plugins: [
     vue(),
     AutoImport({
@@ -20,7 +19,7 @@ export default defineConfig({
       libs: [{
         libraryName: 'vant',
         esModule: true,
-        resolveStyle: name => `../es/${name}/style` 
+        resolveStyle: name => `../es/${name}/style`
       }]
     }),
     [
@@ -29,7 +28,7 @@ export default defineConfig({
         "libraryName": "vant",
         "libraryDirectory": "es",
         "style": true,
-        
+
       }
     ]
   ],
