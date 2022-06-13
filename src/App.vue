@@ -1,7 +1,7 @@
 <template>
   <div class="main-layout">
     <router-view></router-view>
-    <Tabbar active-color="#f03d37" class="main-tab">
+    <Tabbar v-if="showTabbar" active-color="#f03d37" class="main-tab">
       <TabbarItem icon="home-o">标签</TabbarItem>
       <TabbarItem icon="search">标签</TabbarItem>
       <TabbarItem icon="friends-o">标签</TabbarItem>
@@ -12,6 +12,9 @@
 
 <script setup lang="ts">
 import { Tabbar, TabbarItem } from "vant";
+
+const router = useRouter();
+const showTabbar = computed(() => !!router.currentRoute.value.meta.tabbar);
 </script>
 
 <style>

@@ -1,24 +1,12 @@
 <template>
   <div class="index">
     <div class="header-wrapper">
-      <div class="header-bar">
-        <!-- 一个sticky的header，居中的title和右侧的展开 -->
-        <span></span>
-        <span>猫眼电影</span>
-        <span>
-          <van-icon name="wap-nav"/>
-        </span>
-      </div>
-
-      <div class="header-logo">
-        <img
-            src="https://p0.meituan.net/scarlett/448afce485c1f342895185c2be668fa411803.png@80q"
-            alt=""
-        />
-        <span style="flex-grow: 1"></span>
-        <span class="desc">发现最新最热电影</span>
-        <span class="open-app">打开App</span>
-      </div>
+      <Navigator :back="false">
+        <template #right>
+          <van-icon name="wap-nav" />
+        </template>
+      </Navigator>
+      <DownloadApp />
 
       <div class="search-bar">
         <span class="search-city">广州</span>
@@ -29,7 +17,7 @@
           <Tab title="经典电影"></Tab>
         </Tabs>
 
-        <div class="search-icon"/>
+        <div class="search-icon" />
       </div>
     </div>
 
@@ -37,15 +25,16 @@
       <p class="favorate-title">最受好评电影</p>
 
       <div class="movie-chunks">
-        <div class="movie-chunk" v-for="i in 20" :key="i">
+        <div v-for="i in 20" :key="i" class="movie-chunk">
           <div class="movie-img">
             <img
-                src="https://p0.pipi.cn/mmdb/25bfd6be9abc7e8d3311e5bd9b6d287be0f28.png?imageMogr2/thumbnail/2500x2500%3E"
-                alt=""
+              src="https://p0.pipi.cn/mmdb/25bfd6be9abc7e8d3311e5bd9b6d287be0f28.png?imageMogr2/thumbnail/2500x2500%3E"
+              alt=""
             />
-            <span class="movie-rate"
-            >观众评分 <span style="margin-left: 4px">9.6</span></span
-            >
+            <span class="movie-rate">
+              观众评分
+              <span style="margin-left: 4px">9.6</span>
+            </span>
             <span class="shadow"></span>
           </div>
           <p class="movie-title line-ellipsis">这个杀手不太冷</p>
@@ -54,35 +43,42 @@
     </div>
     <div class="split"></div>
     <div class="movie-list">
-      <div class="movie-detail-chunk" v-for="i in 20" :key="i">
+      <div v-for="i in 20" :key="i" class="movie-detail-chunk">
         <img
-            src="//p0.pipi.cn/mmdb/25bfd671be15bf51baf0ee3a5d06b91bf94c3.jpg?imageMogr2/thumbnail/2500x2500%3E?imageView2/1/w/128/h/180"
-            alt=""
+          src="//p0.pipi.cn/mmdb/25bfd671be15bf51baf0ee3a5d06b91bf94c3.jpg?imageMogr2/thumbnail/2500x2500%3E?imageView2/1/w/128/h/180"
+          alt=""
         />
 
         <div class="movie-detail">
           <span class="movie-title line-ellipsis">这个杀手真滴秀</span>
-          <span class="movie-rate">观众评 <span class="score">8.7</span></span>
+          <span class="movie-rate">
+            观众评
+            <span class="score">8.7</span>
+          </span>
           <span class="movie-actor line-ellipsis">主演：Mask</span>
-          <span class="movie-playinfo line-ellipsis"
-          >今天207家影院放映999场</span
-          >
+          <span class="movie-playinfo line-ellipsis">今天207家影院放映999场</span>
           <span class="split-line"></span>
         </div>
 
         <Button round type="danger">购票</Button>
         <Button round type="primary">预售</Button>
-        <Button round style="background: #faaf00; border-color: #faaf00"
-        >想看
-        </Button
-        >
+        <Button round style="background: #faaf00; border-color: #faaf00" @click="toCinema">
+          想看
+        </Button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {Tabs, Tab, Button} from "vant";
+import { Tabs, Tab, Button } from "vant";
+import Navigator from "../../components/Navigator.vue";
+import DownloadApp from "../../components/DownloadApp.vue";
+
+const router = useRouter();
+const toCinema = () => {
+  router.push("/cinema");
+};
 </script>
 
 <style lang="less" scoped>
@@ -92,42 +88,6 @@ import {Tabs, Tab, Button} from "vant";
     top: 0;
     background-color: #fff;
     z-index: 2;
-  }
-
-  .header-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    background-color: #e54847;
-    color: #fff;
-    padding: 6px;
-    font-size: 18px;
-    line-height: 36px;
-  }
-
-  .header-logo {
-    display: flex;
-    align-items: center;
-    height: 60px;
-
-    img {
-      height: 39px;
-      margin-left: 10px;
-    }
-
-    .desc {
-      color: #666;
-      font-weight: bold;
-      font-size: 14px;
-      margin-right: 10px;
-    }
-
-    .open-app {
-      color: #b37e7e;
-      font-weight: bold;
-      margin-right: 10px;
-    }
   }
 
   .search-bar {
@@ -226,9 +186,7 @@ import {Tabs, Tab, Button} from "vant";
             height: 35px;
             position: absolute;
             bottom: 0;
-            background-image: linear-gradient(-180deg,
-            rgba(77, 77, 77, 0),
-            #000);
+            background-image: linear-gradient(-180deg, rgba(77, 77, 77, 0), #000);
           }
         }
 
