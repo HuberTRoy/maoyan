@@ -6,6 +6,7 @@
           <van-icon name="wap-nav" />
         </template>
       </Navigator>
+
       <DownloadApp />
 
       <div class="search-bar">

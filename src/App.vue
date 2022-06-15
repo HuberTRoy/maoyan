@@ -2,10 +2,11 @@
   <div class="main-layout">
     <router-view></router-view>
     <Tabbar v-if="showTabbar" active-color="#f03d37" class="main-tab">
-      <TabbarItem icon="home-o">标签</TabbarItem>
-      <TabbarItem icon="search">标签</TabbarItem>
-      <TabbarItem icon="friends-o">标签</TabbarItem>
-      <TabbarItem icon="setting-o">标签</TabbarItem>
+      <TabbarItem icon="home-o">电影/影院</TabbarItem>
+      <TabbarItem icon="search">视频</TabbarItem>
+      <TabbarItem icon="friends-o">小视频</TabbarItem>
+      <TabbarItem icon="friends-o">演出</TabbarItem>
+      <TabbarItem icon="setting-o">我的</TabbarItem>
     </Tabbar>
   </div>
 </template>

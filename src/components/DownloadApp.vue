@@ -5,17 +5,26 @@
       alt=""
     />
     <span style="flex-grow: 1"></span>
-    <span class="desc">发现最新最热电影</span>
+    <span class="desc">{{ props.title }}</span>
     <span class="open-app">打开App</span>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface Props {
+  title?: string;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  title: "发现最新最热电影",
+});
+</script>
 
 <style scoped lang="less">
 .header-logo {
   display: flex;
   align-items: center;
   height: 60px;
+  background: #fff;
 
   img {
     height: 39px;
