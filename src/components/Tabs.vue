@@ -17,14 +17,14 @@ interface Tab {
   value: string | number;
 }
 
-export type TabsType = Tab[];
+export type TabsType = Tabs[];
 
 // props ts定义
 interface Props {
-  list: Tab[];
+  list: Tabs[];
   tabWidth?: string | number;
   value?: string;
-  onChange?: (tab: Tab) => void;
+  onChange?: (tab: Tabs) => void;
 }
 
 const props = withDefaults(defineProps<Props>(), { tabWidth: 115 });

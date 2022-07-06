@@ -111,8 +111,8 @@
 </template>
 <script setup lang="ts">
 import { Image, DropdownMenu, DropdownItem, TreeSelect, Button } from "vant";
-import Tabs from "../../../components/tabs.vue";
-import type { TabsType } from "../../../components/tabs.vue";
+import Tabs from "../../../components/Tabs.vue";
+import type { TabsType } from "../../../components/Tabs.vue";
 
 const dateOptions = ref<TabsType>([
   { title: "今天07月05日", value: "" },
