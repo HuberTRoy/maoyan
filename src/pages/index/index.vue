@@ -44,7 +44,7 @@
     </div>
     <div class="split"></div>
     <div class="movie-list">
-      <div v-for="i in 20" :key="i" class="movie-detail-chunk">
+      <div v-for="i in 20" :key="i" class="movie-detail-chunk" @click="toMovie">
         <img
           src="//p0.pipi.cn/mmdb/25bfd671be15bf51baf0ee3a5d06b91bf94c3.jpg?imageMogr2/thumbnail/2500x2500%3E?imageView2/1/w/128/h/180"
           alt=""
@@ -77,8 +77,13 @@ import Navigator from "../../components/Navigator.vue";
 import DownloadApp from "../../components/DownloadApp.vue";
 
 const router = useRouter();
-const toCinema = () => {
+const toCinema = (e: MouseEvent) => {
+  e.stopPropagation();
   router.push("/cinema");
+};
+
+const toMovie = () => {
+  router.push("/movie/test");
 };
 </script>
 
@@ -209,7 +214,7 @@ const toCinema = () => {
   .movie-list {
     display: flex;
     flex-direction: column;
-
+    padding-bottom: 60px;
     .movie-detail-chunk {
       padding: 15px;
       display: flex;

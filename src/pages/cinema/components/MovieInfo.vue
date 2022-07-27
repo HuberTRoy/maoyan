@@ -6,7 +6,7 @@
       class="poster"
       src="https://p0.pipi.cn/mmdb/25bfd671be15bf51baf0ee3a5d06b91bf94c3.jpg?imageMogr2/thumbnail/2500x2500%3E"
     />
-    <div class="movie-info-detail">
+    <div class="movie-info-detail" @click="toMovie">
       <div class="title">侏罗纪世界3</div>
       <div class="desc">Jurassic World: Dominion</div>
       <div class="score">
@@ -47,7 +47,7 @@
     </dropdown-item>
   </dropdown-menu>
   <div class="cinema-list">
-    <div class="cinema-item">
+    <div class="cinema-item" @click="toSelectSeat">
       <div class="title-wrap">
         <div class="title-block">
           <div class="title line-ellipsis">万达影城（白云万达广场IMAX店</div>
@@ -114,12 +114,14 @@ import { Image, DropdownMenu, DropdownItem, TreeSelect, Button } from "vant";
 import Tabs from "../../../components/Tabs.vue";
 import type { TabsType } from "../../../components/Tabs.vue";
 
+const router = useRouter();
+
 const dateOptions = ref<TabsType>([
   { title: "今天07月05日", value: "" },
-  { title: "今天07月05日", value: "" },
-  { title: "今天07月05日", value: "" },
-  { title: "今天07月05日", value: "" },
-  { title: "今天07月05日", value: "" },
+  { title: "今天07月06日", value: "" },
+  { title: "今天07月07日", value: "" },
+  { title: "今天07月08日", value: "" },
+  { title: "今天07月09日", value: "" },
 ]);
 const locationOptions = ref<TabsType>([
   { title: "商区", value: "business" },
@@ -144,6 +146,14 @@ const brandOptions = ref([
   { text: "全部", value: 0 },
   { text: "万达影城", value: 1 },
 ]);
+
+const toSelectSeat = () => {
+  router.push("/seat");
+};
+
+const toMovie = () => {
+  router.push("/movie/test");
+};
 </script>
 <style scoped lang="less">
 .movie-info {

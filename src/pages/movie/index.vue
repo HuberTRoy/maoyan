@@ -649,6 +649,7 @@ import SubChunkBread from "../../components/SubChunkBread.vue";
 
   .box-office {
     background: #fff;
+    padding-bottom: 10px;
 
     :deep(.bread-header) {
       color: #000;

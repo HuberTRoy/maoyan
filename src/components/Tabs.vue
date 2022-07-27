@@ -12,19 +12,19 @@
 </template>
 
 <script setup lang="ts">
-interface Tab {
+export type TabsType = Tab[];
+
+export interface Tab {
   title: string;
   value: string | number;
 }
 
-export type TabsType = Tabs[];
-
 // props ts定义
 interface Props {
-  list: Tabs[];
+  list: Tab[];
   tabWidth?: string | number;
   value?: string;
-  onChange?: (tab: Tabs) => void;
+  onChange?: (tab: Tab) => void;
 }
 
 const props = withDefaults(defineProps<Props>(), { tabWidth: 115 });
