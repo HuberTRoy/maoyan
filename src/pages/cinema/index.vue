@@ -2,7 +2,6 @@
   <Navigator title="侏罗纪世界3" />
   <DownloadApp />
   <MovieInfo />
-  <MovieFilter />
 </template>
 
 <script setup lang="ts">
@@ -18,5 +17,4 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), { msg: "你好" });
 const { msg } = toRefs(props);
 </script>
-<style scoped lang="less">
-</style>
+<style scoped lang="less"></style>

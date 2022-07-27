@@ -16,20 +16,13 @@ export default defineConfig({
     }),
     styleImport({
       resolves: [VantResolve()],
-      libs: [{
-        libraryName: 'vant',
-        esModule: true,
-        resolveStyle: name => `../es/${name}/style`
-      }]
+      libs: [
+        {
+          libraryName: "vant",
+          esModule: true,
+          resolveStyle: name => `../es/${name}/style`,
+        },
+      ],
     }),
-    [
-      "import",
-      {
-        "libraryName": "vant",
-        "libraryDirectory": "es",
-        "style": true,
-
-      }
-    ]
   ],
 });
